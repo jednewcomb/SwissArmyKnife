@@ -1,0 +1,48 @@
+package me.maktoba;
+import java.util.Scanner;
+
+public class BinarySearch {
+
+    public static int binarySearch(int num, int[] array) {
+
+        int left = 0;
+        int right = array.length - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+
+            //if we found the number return it
+            if (array[mid] == num) {
+                return num;
+            }
+
+            if (array[mid] < num) {
+                right = mid + 1;
+            }
+
+            if (array[mid] > num) {
+                left = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
+
+
+    public static void main(String[] args) {
+        int[] array = new int[50];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter a number");
+
+        System.out.println(binarySearch(scanner.nextInt(), array));
+
+    }
+
+}
