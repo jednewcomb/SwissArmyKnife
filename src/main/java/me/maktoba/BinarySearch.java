@@ -17,11 +17,10 @@ public class BinarySearch {
             }
 
             if (array[mid] < num) {
-                right = mid + 1;
-            }
-
-            if (array[mid] > num) {
                 left = mid + 1;
+            }
+            else {
+                right = mid - 1;
             }
         }
 
