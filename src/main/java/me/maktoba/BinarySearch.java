@@ -11,7 +11,6 @@ public class BinarySearch {
         while (left <= right) {
             int mid = (left + right) / 2;
 
-            //if we found the number return it
             if (array[mid] == num) {
                 return num;
             }

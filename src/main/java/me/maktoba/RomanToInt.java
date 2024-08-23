@@ -19,6 +19,8 @@ public class RomanToInt {
         int ans = 0;
 
         for (int i = 0; i < s.length(); i++) {
+
+            //lets trace using example 14 - XIV
             if (i < s.length() - 1 && (map.get(s.charAt(i)) < map.get(s.charAt(i + 1)))) {
                 ans -= map.get(s.charAt(i));
             } else {

@@ -1,4 +1,4 @@
-package maktoba.me;
+package me.maktoba;
 
 public class IsNumberPalindrome {
     public boolean isPalindrome(int x) {
@@ -8,6 +8,8 @@ public class IsNumberPalindrome {
 
         int reversed = 0;
         int temp = x;
+
+        //6       8       3
 
         while (temp != 0) {
             int digit = temp % 10;
