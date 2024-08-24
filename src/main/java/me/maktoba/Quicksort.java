@@ -4,17 +4,23 @@ import java.util.Random;
 
 public class Quicksort {
 
-    private static void quickSort(int[] array) {
-        quickSort(array, 0, array.length - 1);
+    private static void swap(int[] array, int val1, int val2) {
+        int temp = array[val1];
+        array[val1] = array[val2];
+        array[val2] = temp;
     }
 
-    private static void quickSort(int[] array, int lowIndex, int highIndex) {
+    private static void quicksort(int[] array, int lowIndex, int highIndex) {
+        //cover case where no number to sort was found
         if (lowIndex >= highIndex) {
             return;
         }
 
+        //pick a pivot randomly in order to improve the complexity of algorithm
         int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
         int pivot = array[pivotIndex];
+        //place our pivot value at the end of the array to
+        //"keep it out of the way" of our pointers so to speak
         swap(array, pivotIndex, highIndex);
 
         int leftPointer = lowIndex;
@@ -22,7 +28,7 @@ public class Quicksort {
 
         while (leftPointer < rightPointer) {
 
-            while(array[leftPointer] <= pivot && leftPointer < rightPointer) {
+            while (array[leftPointer] <= pivot && leftPointer < rightPointer) {
                 leftPointer++;
             }
 
@@ -36,16 +42,12 @@ public class Quicksort {
 
         swap(array, leftPointer, highIndex);
 
-        quickSort(array, lowIndex, leftPointer - 1);
-        quickSort(array, leftPointer + 1, highIndex);
+        quicksort(array, lowIndex, leftPointer - 1);
+        quicksort(array, leftPointer + 1, highIndex);
     }
 
-    public static int[] swap(int[] array, int num1, int num2) {
-        int temp = array[num1];
-        array[num1] = array[num2];
-        array[num2] = temp;
-
-        return array;
+    private static void quicksort(int[] array) {
+        quicksort(array, 0, array.length - 1);
     }
 
     private static void print(int[] array) {
@@ -56,17 +58,20 @@ public class Quicksort {
     }
 
     public static void main(String[] args) {
-        Random rand = new Random();
         int[] array = new int[10];
 
+        Random r = new Random();
+
         for (int i = 0; i < array.length; i++) {
-            array[i] = rand.nextInt(100) + 1;
+            array[i] = r.nextInt(100) + 1;
         }
 
         print(array);
 
-        quickSort(array);
+        quicksort(array);
 
         print(array);
     }
+
 }
+

@@ -4,7 +4,6 @@ import java.util.Scanner;
 public class BinarySearch {
 
     public static int binarySearch(int num, int[] array) {
-
         int left = 0;
         int right = array.length - 1;
 
