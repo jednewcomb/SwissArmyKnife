@@ -4,23 +4,23 @@ import java.util.Random;
 
 public class Quicksort {
 
-    private static void swap(int[] array, int val1, int val2) {
-        int temp = array[val1];
-        array[val1] = array[val2];
-        array[val2] = temp;
+    private static void swap(int[] array, int value1, int value2) {
+        int temp = array[value1];
+        array[value1] = array[value2];
+        array[value2] = temp;
     }
 
     private static void quicksort(int[] array, int lowIndex, int highIndex) {
-        //cover case where no number to sort was found
         if (lowIndex >= highIndex) {
             return;
         }
 
-        //pick a pivot randomly in order to improve the complexity of algorithm
+        //pivotIndex = reference to its position in the array
         int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
+
+        //pivot = the value found in the array at pivotIndex
         int pivot = array[pivotIndex];
-        //place our pivot value at the end of the array to
-        //"keep it out of the way" of our pointers so to speak
+
         swap(array, pivotIndex, highIndex);
 
         int leftPointer = lowIndex;
@@ -44,6 +44,7 @@ public class Quicksort {
 
         quicksort(array, lowIndex, leftPointer - 1);
         quicksort(array, leftPointer + 1, highIndex);
+
     }
 
     private static void quicksort(int[] array) {
@@ -58,9 +59,8 @@ public class Quicksort {
     }
 
     public static void main(String[] args) {
-        int[] array = new int[10];
-
         Random r = new Random();
+        int[] array = new int[10];
 
         for (int i = 0; i < array.length; i++) {
             array[i] = r.nextInt(100) + 1;
