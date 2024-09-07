@@ -25,7 +25,7 @@ public class MaxSubarray {
 
         //this question is actually annoying and stupid. it makes no sense. if all values
         //are positive, it just returns the whole array, even though the sub array including
-        //elements 0-8 would be greater than the sub array of elements 1-9
+        //elements 0-8 would be smaller than the sub array of elements 1-9
         System.out.println(maxSubArray(new int[] {10, 1, 4, 7, 9, 3, 6, 2, 5, 8}));//55
 
 

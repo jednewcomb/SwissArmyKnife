@@ -4,6 +4,13 @@ import java.util.Random;
 
 public class Quicksort {
 
+    private static void print(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
     private static void swap(int[] array, int value1, int value2) {
         int temp = array[value1];
         array[value1] = array[value2];
@@ -15,10 +22,7 @@ public class Quicksort {
             return;
         }
 
-        //pivotIndex = reference to its position in the array
         int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
-
-        //pivot = the value found in the array at pivotIndex
         int pivot = array[pivotIndex];
 
         swap(array, pivotIndex, highIndex);
@@ -51,19 +55,14 @@ public class Quicksort {
         quicksort(array, 0, array.length - 1);
     }
 
-    private static void print(int[] array) {
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-    }
-
     public static void main(String[] args) {
-        Random r = new Random();
+
         int[] array = new int[10];
 
+        Random rand = new Random();
+
         for (int i = 0; i < array.length; i++) {
-            array[i] = r.nextInt(100) + 1;
+            array[i] = new Random().nextInt(100) + 1;
         }
 
         print(array);
@@ -71,7 +70,9 @@ public class Quicksort {
         quicksort(array);
 
         print(array);
+
     }
+
 
 }
 
