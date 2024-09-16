@@ -20,8 +20,6 @@ public class IsNumberPalindrome {
         //extracted digit that will be added to our first var,
         //reversed.
 
-        //6       8       3
-
         while (temp != 0) {
 
             int digit = temp % 10;
