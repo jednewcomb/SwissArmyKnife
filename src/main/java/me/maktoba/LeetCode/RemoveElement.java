@@ -1,4 +1,4 @@
-package me.maktoba;
+package me.maktoba.LeetCode;
 
 public class RemoveElement {
     private static int removeElement(int[] nums, int val) {

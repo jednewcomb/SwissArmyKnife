@@ -1,4 +1,4 @@
-package me.maktoba;
+package me.maktoba.LeetCode;
 
 public class IsNumberPalindrome {
     public boolean isPalindrome(int x) {

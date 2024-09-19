@@ -1,4 +1,4 @@
-package me.maktoba;
+package me.maktoba.LeetCode;
 
 import java.util.HashMap;
 import java.util.Map;
