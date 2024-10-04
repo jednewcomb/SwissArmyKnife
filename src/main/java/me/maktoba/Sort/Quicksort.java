@@ -3,24 +3,17 @@ import java.util.Random;
 
 public class Quicksort {
 
-    public static void swap(int[] array, int index1, int index2) {
-        int temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
+    public static void swap(int[] array, int value1, int value2) {
+        int temp = array[value1];
+        array[value1] = array[value2];
+        array[value2] = temp;
     }
 
     public static void quicksort(int[] array, int lowIndex, int highIndex) {
-        if (lowIndex >= highIndex) {
-            return;
-        }
 
-        //lets set up the beginning of the sort
-        //i think what we want to do is:
-        //choose pivot randomly
-        //put it at the end
-        //remember the index of it and swap it to the end
+        if (lowIndex >= highIndex) return;
 
-        int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex; //randomly chooses pivot
+        int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;//should look at this closer
         int pivot = array[pivotIndex];
         swap(array, pivotIndex, highIndex);
 
@@ -42,6 +35,7 @@ public class Quicksort {
         }
 
         swap(array, leftPointer, highIndex);
+
         quicksort(array, lowIndex, leftPointer - 1);
         quicksort(array, leftPointer + 1, highIndex);
 
@@ -52,14 +46,15 @@ public class Quicksort {
     }
 
     public static void print(int[] array) {
-        for (int nums : array) {
-            System.out.print(nums + " ");
+        for (int num : array) {
+            System.out.print(num + " ");
         }
+
         System.out.println();
     }
 
     public static void main(String[] args) {
-        int[] array = new int [10];
+        int[] array = new int[10];
         Random r = new Random();
 
         for (int i = 0; i < array.length; i++) {
@@ -71,8 +66,5 @@ public class Quicksort {
         print(array);
 
     }
-
-
-
 }
 
