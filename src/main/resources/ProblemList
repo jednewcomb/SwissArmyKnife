@@ -2,9 +2,11 @@
 2. Roman to Integer -   HashMap for Mapped Values
 3. Palindrome Number -  Mod and x10 Wizardy
 4. Maximum Subarray -   Check for Negative Value, Math.Max, Math.MIN_VALUE
-
-5. Remove Element -
+5. Remove Element -     Two Pointer Question, we only go forward in for loop with j pointer if it ISNT the value
+                        so that later we can reference it and put something else there. J pointer is also our number
+                        of non occurrences of val which is what we must return
 6. Contains Duplicate - DUPLICATE should make you think of a CERTAIN data structure immediately
+
 
 7. Add Two Numbers
 8. Majority Element
