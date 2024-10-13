@@ -1,5 +1,4 @@
 package me.maktoba.LeetCode;
-
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy_head = new ListNode(0);
@@ -9,11 +8,18 @@ public class AddTwoNumbers {
 
         while (l1 != null || l2 != null) {
 
+            //if the nodes aren't null, they're equal to that nodes value.
+            //otherwise they are 0
             int l1_val = (l1 != null) ? l1.val : 0;
             int l2_val = (l2 != null) ? l2.val : 0;
 
+            //add the digits of the nodes
             int currSum = l1_val + l2_val + carry;
+            //if the digits of currSum are greater than 10,
+            //we will have to "carry" a 1 (basic arithmetic)
             carry = currSum / 10;
+            //if carry is >10, this extracts the rightermost digit
+            //otherwise, its just the original digit (currSum)
             int last_digit = currSum % 10;
 
             ListNode new_node = new ListNode(last_digit);
@@ -32,7 +38,6 @@ public class AddTwoNumbers {
 
         return dummy_head.next;
     }
-
 
     public class ListNode {
         int val;
