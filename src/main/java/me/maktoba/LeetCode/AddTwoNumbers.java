@@ -15,9 +15,11 @@ public class AddTwoNumbers {
 
             //add the digits of the nodes
             int currSum = l1_val + l2_val + carry;
+
             //if the digits of currSum are greater than 10,
             //we will have to "carry" a 1 (basic arithmetic)
             carry = currSum / 10;
+
             //if carry is >10, this extracts the rightermost digit
             //otherwise, its just the original digit (currSum)
             int last_digit = currSum % 10;
