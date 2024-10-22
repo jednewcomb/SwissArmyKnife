@@ -5,7 +5,6 @@ public class AddTwoNumbers {
         ListNode l3 = dummy_head;
 
         int carry = 0;
-
         while (l1 != null || l2 != null) {
 
             //if the nodes aren't null, they're equal to that nodes value.
