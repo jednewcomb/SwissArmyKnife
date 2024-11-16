@@ -9,9 +9,9 @@ public class AddTwoNumbers {
 
             //if the nodes aren't null, they're equal to that nodes value.
             //otherwise they are 0
-            int l1_val = (l1 != null) ? l1.val : 0;
-            int l2_val = (l2 != null) ? l2.val : 0;
-
+            int l1_val = (l1 != null) ? l1.val : 0;                                     //243
+            int l2_val = (l2 != null) ? l2.val : 0;                                     //564
+                                                                                        //70
             //add the digits of the nodes
             int currSum = l1_val + l2_val + carry;
 
@@ -19,7 +19,7 @@ public class AddTwoNumbers {
             //we will have to "carry" a 1 (basic arithmetic)
             carry = currSum / 10;
 
-            //if carry is >10, this extracts the rightermost digit
+            //if carry is >10, this extracts the rightermost digit of the carry
             //otherwise, its just the original digit (currSum)
             int last_digit = currSum % 10;
 
