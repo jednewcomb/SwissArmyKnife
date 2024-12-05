@@ -10,7 +10,7 @@ public class BinarySearch {
         //while our left pointer is less than or equal to the right pointer
         //set a variable equal to the middle of the array,
         //and check if its equal to our desired number
-        
+
         while (left <= right) {
             int mid = (left + right) / 2;
 
