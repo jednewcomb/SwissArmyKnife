@@ -20,7 +20,6 @@ public class MergeNodesBetweenZeros {
         }
     }
 
-
     public ListNode mergeNodes(ListNode head) {
 
         //Iterator for our head node (skip the first 0)
@@ -48,4 +47,3 @@ public class MergeNodesBetweenZeros {
         return ansHead.next;
     }
 }
-
