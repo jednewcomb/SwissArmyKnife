@@ -29,20 +29,46 @@ public class BinarySearch {
         return -1;
     }
 
+    public static int binarySearchRecursive(int[] array, int num) {
+        if (array == null) {
+            return -1;
+        }
+
+        return binarySearchRecursive(array, num, 0, array.length - 1);
+    }
+
+    private static int binarySearchRecursive(int[] array, int num, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+
+        int middle = (left + right) / 2;
+        if (array[middle] == num) {
+            return middle;
+        }
+        else if (array[middle] > num) {
+            return binarySearchRecursive(array, num, left, middle - 1);
+        }
+        else {
+            return binarySearchRecursive(array, num, middle + 1, right);
+        }
+    }
+
 
 
     public static void main(String[] args) {
         int[] array = new int[50];
 
         for (int i = 0; i < array.length; i++) {
-            array[i] = i;
+                array[i] = i * 2;
         }
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter a number");
+        System.out.println("Enter a number between 0 and 50");
 
         System.out.println(binarySearch(scanner.nextInt(), array));
+        System.out.println(binarySearchRecursive(array, scanner.nextInt()));
 
     }
 
