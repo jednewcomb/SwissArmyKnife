@@ -32,6 +32,8 @@ public class AddTwoNumbers {
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
             l3 = l3.next;
+
+            
         }
 
         //if we have a carry of 1, we need to make it a new node
